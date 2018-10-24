@@ -1,6 +1,6 @@
 <template>
 
-  <footer class="footer-basic-centered" >
+  <footer class="footer-basic-centered">
 
     <p class="footer-copyright">ⓒ Copyright 2018 MND-Wiki, All rights reserved.</p>
 
@@ -40,13 +40,14 @@
 </script>
 
 <style>
+  .el-footer {
+    padding: 0;
+  }
 </style>
 
 <style scoped>
 
   .footer-basic-centered{
-    position:absolute;
-    bottom: 0;
     background-color: #292c2f;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
@@ -55,6 +56,7 @@
     font: normal 18px sans-serif;
 
     padding: 45px;
+    margin-top: 80px;
   }
 
   .footer-basic-centered .footer-copyright{

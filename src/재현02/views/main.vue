@@ -17,7 +17,7 @@
     </el-container>
 
 
-    <el-footer id="wiki-footer"><footer-component></footer-component></el-footer>
+    <el-footer><footer-component></footer-component></el-footer>
 
 
   </el-container>
@@ -39,14 +39,5 @@
     }
 </script>
 
-<style>
-  #wiki-footer {
-    padding: 0;
-  }
-</style>
-
 <style scoped>
-  .el-footer{
-    height:0;
-  }
 </style>
