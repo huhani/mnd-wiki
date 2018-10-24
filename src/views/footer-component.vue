@@ -1,16 +1,22 @@
 <template>
-  <el-card class="box-card">
-    <div slot="header" class="clearfix">
-      <span>ⓒ Copyright 2018 MNDWiki, All Rights Reserved.</span>
-      <br><span style="font-weight:normal; font-size:14px">관리자: 국방부 지식정보화기획처 7급 홍길동, <a href="asdf@mnd.mil">mnd-wiki-admin@mnd.mil</a></span>
-      <!--<el-button style="float: right; padding: 3px 0" type="text">Operation button</el-button>-->
-    </div>
 
-    <li v-for="footerLists in footerLists" class="text item" id="footerHangmok">
-      {{footerLists}}
-    </li>
-    <li class="hangmok-majimak">&nbsp;</li>
-  </el-card>
+  <footer class="footer-basic-centered">
+
+    <p class="footer-copyright">ⓒ Copyright 2018 MND-Wiki, All rights reserved.</p>
+
+    <p class="footer-links">
+      <a href="#">개인정보보호방침</a>
+      ·
+      <a href="#">이용약관</a>
+      ·
+      <a href="#">국방부</a>
+      ·
+      <a href="#">Vue.js</a>
+    </p>
+
+    <p class="footer-administrator">관리자: 국방부 지식정보화추진처 7급 홍길동, mnd-wiki-contact@mnd.mil</p>
+
+  </footer>
 
 </template>
 
@@ -27,51 +33,81 @@
     },
     data() {
       return {
-        footerLists: ["개인정보보호방침", "이용약관", "쿠키 사용 정책", "국방부", "Vue.js"]
+        // 데이터는 함수로만 가능!
       }
     }
   }
 </script>
 
+<style>
+  .el-footer {
+    padding: 0;
+  }
+</style>
+
 <style scoped>
-  .text {
+
+  .footer-basic-centered{
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font: normal 18px sans-serif;
+
+    padding: 45px;
+    margin-top: 80px;
+  }
+
+  .footer-basic-centered .footer-copyright{
+    color:  #8d9093;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .footer-basic-centered .footer-administrator{
+    color:  #8f9296;
     font-size: 14px;
+    margin: 0;
   }
 
-  .item {
-    padding: 18px 0;
+  .footer-basic-centered .footer-links{
+    list-style: none;
+    font-weight: bold;
+    color:  #ffffff;
+    padding: 35px 0 23px;
+    margin: 0;
   }
 
-  .box-card {
-    text-align: center;
-    width: 96%;
-    position:absolute;
-    bottom: 20px;
-    border: 2px ;
-    border-color:black;
-
-  }
-  .clearfix
-  {
-    text-align: center;
-    font-size:24px;
-    font-weight:bold;
-    padding-top:1px;
-    padding-bottom:1px;
-  }
-  li.text{
+  .footer-basic-centered .footer-links a{
     display:inline-block;
-    padding-right: 5%;
-    padding-left: 5%;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    border-left: 2px solid #ececec;
-    text-align:center;
+    text-decoration: none;
+    color: inherit;
   }
 
-  .hangmok-majimak{
-    display:inline-block;
-    border-right:2px solid #ececec;
+  /* If you don't want the footer to be responsive, remove these media queries */
 
+  @media (max-width: 600px) {
+
+    .footer-basic-centered{
+      padding: 35px;
+    }
+
+    .footer-basic-centered .footer-copyright{
+      font-size: 18px;
+    }
+
+    .footer-basic-centered .footer-administrator{
+      font-size: 12px;
+    }
+
+    .footer-basic-centered .footer-links{
+      font-size: 14px;
+      padding: 25px 0 20px;
+    }
+
+    .footer-basic-centered .footer-links a{
+      line-height: 1.8;
+    }
   }
 </style>
