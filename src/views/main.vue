@@ -15,12 +15,17 @@
 
         </el-container>
     </el-container>
-    <el-footer>Footer</el-footer>
+
+
+    <el-footer><footer-component></footer-component></el-footer>
+
+
   </el-container>
 </template>
 
 <script>
   import navbar from './navbar.vue'
+  import footerComponent from './footer-component.vue'
   import MainContent from './main-content.vue'
   import RecentPosts from './RecentPosts.vue'
     export default {
@@ -28,7 +33,8 @@
       components: {
         navbar:navbar,
         mainContent: MainContent,
-        recentPosts: RecentPosts
+        recentPosts: RecentPosts,
+        footerComponent:footerComponent
       }
     }
 </script>
