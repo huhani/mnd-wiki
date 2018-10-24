@@ -17,23 +17,23 @@
 
 <script>
 
-import Vue from 'vue';
-import Element from 'element-ui';
-Vue.use(Element);
+  import Vue from 'vue';
+  import Element from 'element-ui';
+  Vue.use(Element);
 
-export default {
-  data() {
-    return {
-      activeIndex: '1',
-      activeIndex2: '1'
-    };
-  },
-  methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+  export default {
+    data() {
+      return {
+        activeIndex: '1',
+        activeIndex2: '1'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
     }
   }
-}
 </script>
 
 <style>
@@ -44,7 +44,14 @@ export default {
     height: 25px;
     padding: 0 10px 0 0;
   }
-
+  #navbar {
+    background-color: #3E5F40;
+    color:#D0D1CB;
+  }
+  #navbar .is-active{
+    background-color: #224224;
+    color: antiquewhite;
+  }
   #navbar .search {
     float: right;
   }

@@ -5,7 +5,7 @@
     </el-header>
 
     <el-container>
-        <el-aside>
+        <el-aside style="width:200px !important;">
           <recent-posts></recent-posts>
         </el-aside>
         <el-container>
@@ -31,7 +31,7 @@
     export default {
       name: "main.vue",
       components: {
-        navbar:navbar,
+        navbar: navbar,
         mainContent: MainContent,
         recentPosts: RecentPosts,
         footerComponent:footerComponent

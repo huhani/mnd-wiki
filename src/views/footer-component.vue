@@ -57,9 +57,6 @@
 
     padding: 45px;
     margin-top: 80px;
-    position: absolute;
-    bottom:0;
-
   }
 
   .footer-basic-centered .footer-copyright{
