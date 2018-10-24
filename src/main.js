@@ -1,13 +1,9 @@
 import Vue from 'vue'
-import navbar from './views/navbar.vue';
-import MainContent from './views/main-content.vue'
+import Main from './views/main.vue'
+import ElementUI from 'element-ui'
+Vue.use(ElementUI);
 
 window.a = new Vue({
-  el: '#navbar',
-  render: h => h(navbar)
-})
-
-window.b = new Vue({
-  el: '#main-content',
-  render: h => h(MainContent)
-})
+  el: 'main',
+  render: h => h(Main)
+});
