@@ -19,7 +19,7 @@
   export default {
     data() {
       return {
-        title: "우리식 위키페디아:대문"
+        title: "국방위키(가칭):대문"
       };
     },
     methods: {
