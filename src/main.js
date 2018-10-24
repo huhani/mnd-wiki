@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import navbar from './main/navbar.vue'
-import TitleSection from './widget/TitleSection.vue'
+import navbar from './views/navbar.vue';
+import MainContent from './views/main-content.vue'
 
 window.a = new Vue({
   el: '#navbar',
@@ -8,6 +8,6 @@ window.a = new Vue({
 })
 
 window.b = new Vue({
-  el: '#doc-title-section',
-  render: h => h(TitleSection)
+  el: '#main-content',
+  render: h => h(MainContent)
 })
