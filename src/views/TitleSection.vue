@@ -33,6 +33,8 @@
 <style>
 .docTitle {
   display: inline-block;
+  font-size: 28px;
+  margin: 15px 5px;
 }
 .clear {
   clear: both;
