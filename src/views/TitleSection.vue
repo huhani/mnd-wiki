@@ -2,8 +2,9 @@
   <div>
       <H1 class="docTitle">{{title}}</H1>
       <el-button-group class="controlButtons">
-        <el-button size="mini" type="primary" icon="el-icon-edit">역링크</el-button>
-        <el-button size="mini" type="primary" icon="el-icon-share">편집</el-button>
+        <el-button size="mini" type="primary" icon="el-icon-question">질의응답</el-button>
+        <el-button size="mini" type="primary" icon="el-icon-info">역사</el-button>
+        <el-button size="mini" type="primary" icon="el-icon-edit">편집</el-button>
         <el-button size="mini" type="primary" icon="el-icon-delete">삭제</el-button>
       </el-button-group>
     <div class="clear"></div>
