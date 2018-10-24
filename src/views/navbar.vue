@@ -39,6 +39,12 @@
 <style>
   @import url("//unpkg.com/element-ui@2.4.8/lib/theme-chalk/index.css");
 
+  .el-header{
+    padding:0;
+  }
+  .el-submenu{
+    color:red;
+  }
   #navbar .logo {
     width: 25px;
     height: 25px;
@@ -46,7 +52,7 @@
   }
   #navbar {
     background-color: #3E5F40;
-    color:#D0D1CB;
+    padding:0;
   }
   #navbar .is-active{
     background-color: #224224;

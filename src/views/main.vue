@@ -1,25 +1,20 @@
 <template>
-  <el-container>
+  <el-container class="wrap">
     <el-header>
       <navbar></navbar>
     </el-header>
 
     <el-container>
-        <el-aside style="width:200px !important;">
+        <el-aside>
           <recent-posts></recent-posts>
         </el-aside>
         <el-container>
           <el-main>
             <main-content></main-content>
           </el-main>
-
         </el-container>
     </el-container>
-
-
     <el-footer><footer-component></footer-component></el-footer>
-
-
   </el-container>
 </template>
 
@@ -40,4 +35,7 @@
 </script>
 
 <style scoped>
+  .wrap {
+    height: 100%;
+  }
 </style>

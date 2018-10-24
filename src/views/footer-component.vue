@@ -56,7 +56,6 @@
     font: normal 18px sans-serif;
 
     padding: 45px;
-    margin-top: 80px;
   }
 
   .footer-basic-centered .footer-copyright{

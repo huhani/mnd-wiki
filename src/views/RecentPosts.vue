@@ -48,6 +48,6 @@
 
   .box-card {
     width: 99%;
-    height: 100%;
+    height: 99%;
   }
 </style>
