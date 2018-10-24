@@ -19,6 +19,7 @@
 
   #documentInfo {
     border: 1px solid #DDD;
+    padding:8px;
   }
 
  #documentInfo .printStr {
