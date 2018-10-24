@@ -4,16 +4,19 @@
       <navbar></navbar>
     </el-header>
 
+    <el-container>
 
+        <el-aside>
+          asdfasdsf
+        </el-aside>
+        <el-container>
+          <el-main>
+            <main-content></main-content>
+          </el-main>
 
-    <el-main>
-      <main-content></main-content>
-    </el-main>
-
+        </el-container>
+    </el-container>
     <el-footer>Footer</el-footer>
-
-
-
   </el-container>
 </template>
 
