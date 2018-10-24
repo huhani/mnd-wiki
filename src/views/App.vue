@@ -1,5 +1,7 @@
 <template>
   <el-container>
+
+
     <el-header>
       <navbar></navbar>
     </el-header>
@@ -16,18 +18,26 @@
 
         </el-container>
     </el-container>
-    <el-footer>Footer</el-footer>
+
+
+
+    <el-footer><footer-component></footer-component></el-footer>
+
+
+
   </el-container>
 </template>
 
 <script>
   import navbar from './navbar.vue'
+  import footerComponent from './footer-component.vue'
   import MainContent from './main-content.vue'
     export default {
-      name: "main.vue",
+      name: "App",
       components: {
         navbar:navbar,
-        mainContent: MainContent
+        mainContent: MainContent,
+        footerComponent:footerComponent
       }
     }
 </script>

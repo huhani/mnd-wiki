@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import Main from './views/main.vue'
+import App from './views/App.vue'
 import ElementUI from 'element-ui'
 Vue.use(ElementUI);
 
 window.a = new Vue({
   el: 'main',
-  render: h => h(Main)
+  render: h => h(App)
 });
