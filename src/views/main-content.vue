@@ -1,6 +1,7 @@
 <template>
   <doc-title-section></doc-title-section>
 
+
 </template>
 
 
@@ -13,7 +14,7 @@
   export default {
     data: function(){
       return {
-        test: 123
+        test: 12312312312
       }
     },
     methods: {
