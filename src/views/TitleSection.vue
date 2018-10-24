@@ -2,9 +2,9 @@
   <div>
       <H1 class="docTitle">{{title}}</H1>
       <el-button-group class="controlButtons">
-        <el-button type="primary" icon="el-icon-edit">역링크</el-button>
-        <el-button type="primary" icon="el-icon-share">편집</el-button>
-        <el-button type="primary" icon="el-icon-delete">삭제</el-button>
+        <el-button size="mini" type="primary" icon="el-icon-edit">역링크</el-button>
+        <el-button size="mini" type="primary" icon="el-icon-share">편집</el-button>
+        <el-button size="mini" type="primary" icon="el-icon-delete">삭제</el-button>
       </el-button-group>
     <div class="clear"></div>
   </div>
@@ -33,6 +33,8 @@
 <style>
 .docTitle {
   display: inline-block;
+  font-size: 28px;
+  margin: 15px 5px;
 }
 .clear {
   clear: both;
