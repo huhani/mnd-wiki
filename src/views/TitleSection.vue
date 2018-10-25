@@ -31,7 +31,6 @@
     },
     watch: {
       asdf(documentObj) {
-        alert(10);
         this.title = documentObj.title;
       }
     }

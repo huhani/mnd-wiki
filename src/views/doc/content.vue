@@ -1,15 +1,20 @@
 <template>
   <doc-content>
+    <div id="document-content">
+      {{ document.content }}
+    </div>
   </doc-content>
-
-
-
 </template>
 
 <script>
     export default {
         name: "content.vue",
-
+        props: ['document'],
+        data() {
+          return {}
+        },
+      methods: {
+       }
     }
 </script>
 

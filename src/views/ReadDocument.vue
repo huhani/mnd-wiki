@@ -5,10 +5,10 @@
           {{documentInfoMessage}}
         </div>
         <div id="documentContent">
-          <doc-content></doc-content>
+          <doc-content v-bind:document="documentData"></doc-content>
         </div>
         <div id="documentInfo">
-          <doc-info></doc-info>
+          <doc-info v-bind:document="documentData"></doc-info>
         </div>
     </div>
 
@@ -29,7 +29,6 @@
 
     export default {
         name: "ReadDocument.vue",
-        documentData: loadingDocument,
       data() {
           var path = window.location.pathname;
           var docRegex = /^\/w:(.*)/i;
@@ -37,11 +36,11 @@
           var that = this;
           this.$emit('getData', loadingDocument);
 
-
           if(docMatch && docMatch.length > 1) {
             let title = docMatch[1];
             http('../src/json/'+title+'.json').then(function(resolve){
               that.$emit('getData', resolve.data);
+              that.documentData = resolve.data;
             })['catch'](function(e){
               console.error(e);
             });
@@ -49,7 +48,8 @@
 
           }
           return {
-            documentInfoMessage: null
+            documentInfoMessage: null,
+            documentData: loadingDocument
           };
       },
       components: {
