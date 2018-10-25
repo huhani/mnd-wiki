@@ -1,10 +1,14 @@
 <template>
   <div v-if="!config.hideTopNavigator">
-    <H1 class="docTitle">{{title}}<span v-if="config.isEdit" class="edit-name">::편집</span></H1>
+    <H1 class="docTitle">{{originTitle}}
+
+      <span v-if="config.isEdit && document.title !== unavailableStr" class="edit-name">::편집</span>
+      <span v-else-if="document.title === unavailableStr" class="edit-name">::등록</span>
+    </H1>
     <el-button-group class="controlButtons">
       <el-button size="mini" type="primary" icon="el-icon-question">질의응답</el-button>
       <el-button size="mini" type="primary" icon="el-icon-info">역사</el-button>
-      <el-button size="mini" type="primary" icon="el-icon-edit">편집</el-button>
+      <el-button size="mini" type="primary" v-bind:disabled="config.isEdit" v-on:click="handleClickWrite" icon="el-icon-edit">편집</el-button>
       <el-button size="mini" type="primary" icon="el-icon-delete">삭제</el-button>
     </el-button-group>
     <div class="clear"></div>
@@ -20,16 +24,22 @@
   export default {
     data() {
       return {
+        unavailableStr: "<unavailable>",
         title: "국방위키(가칭):대문"
       };
     },
     props : {
       document: Object,
-      config: Object
+      config: Object,
+      originTitle: String
     },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
+      },
+      handleClickWrite() {
+        console.log(this.config);
+        this.config.isEdit = true;
       }
     },
     watch: {
@@ -56,6 +66,6 @@
 }
   .controlButtons {
     float: right;
-    padding: 25px 50px 20px 0;
+    padding: 25px 0 20px 0;
   }
 </style>

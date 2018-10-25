@@ -6,10 +6,10 @@
         </div>
         <div v-if="!hasLoading && !detectNotFound" id="showDocument">
           <div id="documentContent">
-            <doc-content v-bind:document="documentData"></doc-content>
+            <doc-content v-bind:document="document"></doc-content>
           </div>
           <div id="documentInfo">
-            <doc-info v-bind:document="documentData"></doc-info>
+            <doc-info v-bind:document="document"></doc-info>
           </div>
         </div>
       <div v-else class="ErorSection__container">
@@ -50,10 +50,12 @@
       name: "ReadDocument.vue",
       props: {
         isHideTopNavigator: Boolean,
-        config: Object
+        config: Object,
+        document: Object
       },
 
       data() {
+        if(this.document.title === "<unavailable>") {
           var title = null;
           var path = window.location.pathname;
           var docRegex = /^\/w\/(.*)/i;
@@ -64,32 +66,39 @@
           if(docMatch && docMatch.length > 1) {
             title = docMatch[1];
             this.hasLoading = true;
-            this.originTitle = title;
             this.$emit('getData', Object.assign(loadingDocument, {title: title}));
             http('../src/json/'+title+'.json').then(function(resolve){
               var data = resolve.data;
               that.$emit('getData', resolve.data);
-              that.documentData = resolve.data;
+              that.document = resolve.data;
             })['catch'](function(e){
-              that.detectNotFound = true;
-              that.detectError = true;
+              that.config.detectNotFound = true;
+              that.config.detectError = true;
               console.error(e);
             })['finally'](function() {
               that.hasLoading = false;
             });
+          } else if(path === '/') {
+            title = loadingDocument.title;
+            this.$emit('getData', loadingDocument);
+            this.document = loadingDocument;
           } else {
             hideTopNavigator = true;
-            this.detectError = true;
+            this.config.detectError = true;
           }
           this.config.hideTopNavigator = hideTopNavigator;
+        }
           return {
             documentInfoMessage: null,
-            documentData: loadingDocument,
-            detectNotFound: false,
-            detectError: false,
-            hasLoading: true,
+            document: loadingDocument,
+            hasLoading: this.hasLoading,
             originTitle: title
           };
+      },
+      watch: {
+        'config.editCancel': function(newVal, oldVal) {
+
+        }
       },
       components: {
         docContent: content,
