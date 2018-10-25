@@ -1,4 +1,5 @@
 <template>
+
   <el-menu id="navbar" :default-active="activeIndex" active-text-color="color: rgb(203, 242, 190)" text-color="#CCC" class="el-menu-demo" mode="horizontal" @select="handleSelect">
     <el-menu-item index="1"><img class="logo" src="../img/logo.png">국방위키</el-menu-item>
     <el-submenu index="2">
@@ -48,6 +49,13 @@
 
   .el-header{
     padding:0;
+  }
+
+  #navbar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
   }
   #navbar .logo {
     width: 25px;

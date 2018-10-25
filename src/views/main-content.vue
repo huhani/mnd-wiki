@@ -1,7 +1,8 @@
 <template>
   <div class>
     <doc-title-section v-bind:document="documentObject" v-bind:config="config"></doc-title-section>
-    <doc-content v-on:getData="subscribeData" v-bind:config="config"></doc-content>
+    <doc-content v-if="!config.isEdit" v-on:getData="subscribeData" v-bind:config="config"></doc-content>
+    <doc-edit v-if="config.isEdit" v-bind:config="config"></doc-edit>
   </div>
 </template>
 
@@ -11,7 +12,14 @@
   import Vue from "Vue";
   import DocTitleSection from "./TitleSection.vue";
   import ReadDocument from "./ReadDocument.vue";
+  import EditDocument from "./doc/edit.vue";
   Vue.use(VueRouter);
+
+  function hasEditMode() {
+    var path = window.location.pathname;
+    var editRegex = /^\/edit\/(.*)/i;
+    return !!path.match(editRegex);
+  }
 
   export default {
     data: function(){
@@ -19,6 +27,7 @@
         test: 123,
         documentObject: null,
         config: {
+          isEdit: hasEditMode(),
           hideTopNavigator: false
         }
       }
@@ -33,7 +42,8 @@
     },
     components: {
       DocTitleSection: DocTitleSection,
-      DocContent: ReadDocument
+      DocContent: ReadDocument,
+      DocEdit: EditDocument
     }
   }
 

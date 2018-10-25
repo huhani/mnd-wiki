@@ -1,14 +1,15 @@
 <template>
   <el-container>
-    <el-header>
+    <el-header id="main_header__container">
       <navbar></navbar>
     </el-header>
 
-    <el-container>
-        <el-aside style="width:200px !important; height: 700px;">
+
+    <el-container id="aside_main__container">
+        <el-aside style="width:250px !important; height: 700px; position: relative; top: 20px;">
           <recent-posts></recent-posts>
         </el-aside>
-        <el-container>
+        <el-container id="main__container">
           <el-main>
             <main-content></main-content>
           </el-main>
@@ -40,6 +41,21 @@
 </script>
 
 <style>
+  #main_header__container {
+    padding: 0;
+    background-color: #3E5F40;
+  }
+
+  #aside_main__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #main__container {
+    min-width: 650px;
+    width: 950px;
+  }
+
   #wiki-footer {
     padding: 0;
   }

@@ -56,7 +56,7 @@
       data() {
           var title = null;
           var path = window.location.pathname;
-          var docRegex = /^\/w:(.*)/i;
+          var docRegex = /^\/w\/(.*)/i;
           var docMatch = docRegex.exec(path);
           var that = this;
           var hideTopNavigator = false;
