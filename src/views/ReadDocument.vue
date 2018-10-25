@@ -40,7 +40,7 @@
   import http from 'axios'
   var loadingDocument = {
     title: "국방위키(가칭): 대문",
-    content: "이곳은 국군장병의 지식을 공유하는 국방망의 위키피디아, 국방위키입니다. 사용자들은 교범이나 실무와 관련한 지식들을 자유롭게 국방위키에 등재할 수 있고, ",
+    content: "대문 테스트입니다.",
     date: "20180101235959",
     comment: "TEST",
   };
