@@ -4,7 +4,7 @@
     <div is="documentInfoMessage" id="document-info">
       {{documentInfoMessage}}
     </div>
-    <div v-if="!hasLoading && !detectNotFound" id="showDocument">
+    <div v-if="!config.hasLoading && !config.detectNotFound" id="showDocument">
       <div id="documentContent">
         <doc-content v-bind:document="document"></doc-content>
       </div>
@@ -13,9 +13,9 @@
       </div>
     </div>
     <div v-else class="ErorSection__container">
-      <div v-if="detectNotFound" id="ErrorSection">
+      <div v-if="config.detectNotFound" id="ErrorSection">
         <div id="error-not-found">
-          <error-not-found v-bind:title="originTitle"></error-not-found>
+          <error-not-found v-bind:config="config" v-bind:document="document"></error-not-found>
         </div>
       </div>
       <div v-else>
@@ -59,19 +59,16 @@
         var docMatch = docRegex.exec(path);
         var that = this;
         var hideTopNavigator = false;
-        this.$emit('getData', loadingDocument);
         if(docMatch && docMatch.length > 1) {
           title = docMatch[1];
           this.hasLoading = true;
-          this.$emit('getData', Object.assign(loadingDocument, {title: title}));
           http('../src/json/'+title+'.json').then(function(resolve){
-            var data = resolve.data;
-            that.$emit('getData', resolve.data);
-            that.document = resolve.data;
+            let data = resolve.data;
+            that.$emit('getData', data);
+            that.document = data;
           })['catch'](function(e){
             that.config.detectNotFound = true;
             that.config.detectError = true;
-            console.error(e);
           })['finally'](function() {
             that.hasLoading = false;
           });

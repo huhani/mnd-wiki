@@ -3,11 +3,10 @@
     <el-alert title="Not Found" type="info" class="__msgbox_alert" show-icon>
       <div class="__msgbox notfound__msgbox">
         <span>정보를 찾을 수 없습니다. 지금 바로 <b>{{decodeURIComponent(title)}}</b>에 대한 정보를 등록하여보세요!</span>
-        <el-button class="__msgbox_btn" size="mini" type="primary" v-on:click="handleClick" plain>새로 만들기</el-button>
       </div>
     </el-alert>
     <div id="NotFoundWrite">
-      <not-found-write></not-found-write>
+      <not-found-write v-bind:document="document" v-bind:config="config"></not-found-write>
     </div>
   </div>
 </template>
@@ -21,9 +20,10 @@
 
   export default {
     data() {
+      console.log(this);
       return {};
     },
-    props : ['document', 'title'],
+    props : ['document', 'config', 'title'],
     methods: {
       handleClick() {
         alert("준비중");
