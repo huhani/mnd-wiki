@@ -1,10 +1,15 @@
 <template>
-    
+  <doc-content>
+  </doc-content>
+
+
+
 </template>
 
 <script>
     export default {
-        name: "content.vue"
+        name: "content.vue",
+
     }
 </script>
 
