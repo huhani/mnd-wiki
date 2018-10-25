@@ -1,6 +1,6 @@
 <template>
   <div v-if="!config.hideTopNavigator">
-    <H1 class="docTitle">{{title}}</H1>
+    <H1 class="docTitle">{{title}}<span v-if="config.isEdit" class="edit-name">::편집</span></H1>
     <el-button-group class="controlButtons">
       <el-button size="mini" type="primary" icon="el-icon-question">질의응답</el-button>
       <el-button size="mini" type="primary" icon="el-icon-info">역사</el-button>
@@ -34,7 +34,7 @@
     },
     watch: {
       document(documentObj) {
-        this.title = documentObj.title;
+        this.title = decodeURIComponent(documentObj.title);
       }
     }
   }
@@ -46,6 +46,11 @@
   font-size: 28px;
   margin: 15px 5px;
 }
+
+.docTitle .edit-name {
+  color: #666;
+}
+
 .clear {
   clear: both;
 }

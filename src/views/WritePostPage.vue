@@ -57,6 +57,9 @@
   };
 </script>
 <style>
+  #main__container .el-aside, #main__container .el-main {
+    overflow: visible;
+  }
   .edit-container {
     width: 80%;
     height: 100%;
