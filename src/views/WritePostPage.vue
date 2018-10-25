@@ -40,7 +40,6 @@
     },
     props: {
       document: Object,
-      originTitle: String,
       config: Object
     },
     methods: {
@@ -51,16 +50,13 @@
       },
       cancelEdit() {
         this.config.editCancel = true;
-        Object.assign(this.document, {
-          title: this.originTitle,
-          content: this.originContent
-        });
+        alert(this.config.originTitle);
       }
     },
     data() {
       return {
         unavailableStr: "<unavailable>",
-        input:this.originTitle || "<undefined>",
+        input:this.config.originTitle || "<undefined>",
         editorText: this.document.content || "<undefined>",
         editorOptions: {
           hideModeSwitch: true
@@ -75,9 +71,6 @@
         let doc = documentObject.content;
         this.originContent = doc;
         this.editorText = doc;
-      },
-      originTitle: function(value) {
-        this.input = value;
       }
     }
   };

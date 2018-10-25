@@ -1,6 +1,6 @@
 <template>
     <div id="EditPage">
-      <write-post-page id="WritePostPage" v-bind:document="document" v-bind:origin-title="originTitle" v-bind:config="config"></write-post-page>
+      <write-post-page id="WritePostPage" v-bind:document="document" v-bind:config="config"></write-post-page>
     </div>
 </template>
 
@@ -11,8 +11,7 @@
       name: "edit",
       props: {
           config: Object,
-          document: Object,
-        originTitle: String
+          document: Object
       },
       data() {
           return {
@@ -22,9 +21,6 @@
       watch: {
         document(documentObject) {
           this.document = documentObject;
-        },
-        originTitle(title) {
-          this.input = title;
         }
 ,      },
       components: {

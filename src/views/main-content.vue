@@ -1,8 +1,8 @@
 <template>
   <div class>
-    <doc-title-section v-bind:document="documentObject" v-bind:config="config" v-bind:origin-title="originTitle"></doc-title-section>
+    <doc-title-section v-bind:document="documentObject" v-bind:config="config"></doc-title-section>
     <doc-content v-if="!config.isEdit" v-on:getData="subscribeData" v-bind:document="documentObject" v-bind:config="config"></doc-content>
-    <doc-edit v-if="config.isEdit" v-bind:config="config" v-bind:document="documentObject" v-bind:origin-title="originTitle"></doc-edit>
+    <doc-edit v-if="config.isEdit" v-bind:config="config" v-bind:document="documentObject"></doc-edit>
   </div>
 </template>
 
@@ -40,7 +40,7 @@
       http('../src/json/'+title+'.json').then(function(resolve){
         var data = resolve.data;
         that.documentObject = data;
-        that.originTitle = title;
+        that.config.originTitle = title;
       })['catch'](function(e){
         conf.editCancel = false;
         conf.detectNotFound = true;
@@ -59,9 +59,9 @@
           hideTopNavigator: false,
           editCancel: false,
           detectNotFound: false,
-          detectError: false
-        },
-        originTitle: title
+          detectError: false,
+          originTitle: title
+        }
       }
     },
     methods: {
