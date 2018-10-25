@@ -203,13 +203,11 @@ h2
 
 }
 .catlinks li:first-child {
-
   padding-left: 0.25em;
   border-left: none;
 
 }
 .catlinks li {
-
   display: inline-block;
   line-height: 1.25em;
   border-left: 1px solid #AAA;
@@ -218,5 +216,11 @@ h2
   padding-left: 0.5em;
   zoom: 1;
   display: inline !ie;
+
+}
+.wiki-table-wrap {
+  padding:10px;
+  clear: right;
+  float: right;
 
 }
