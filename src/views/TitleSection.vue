@@ -23,14 +23,14 @@
         title: "국방위키(가칭):대문"
       };
     },
-    props : ['asdf'],
+    props : ['document'],
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
       }
     },
     watch: {
-      asdf(documentObj) {
+      document(documentObj) {
         this.title = documentObj.title;
       }
     }
