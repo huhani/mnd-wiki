@@ -1,7 +1,6 @@
 <template>
   <doc-content>
-    <div id="document-content">
-      {{ document.content }}
+    <div id="document-content" v-html="document.content">
     </div>
   </doc-content>
 </template>
