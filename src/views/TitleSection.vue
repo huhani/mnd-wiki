@@ -1,6 +1,6 @@
 <template>
   <div v-if="!config.hideTopNavigator">
-    <H1 class="docTitle">{{config.originTitle}}
+    <H1 class="docTitle">{{decodeURI(config.originTitle)}}
 
       <span v-if="config.isEdit && document.title !== unavailableStr" class="edit-name">::편집</span>
       <span v-else-if="document.title === unavailableStr" class="edit-name">::등록</span>
