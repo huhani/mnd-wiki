@@ -37,17 +37,19 @@
       var title = getTitle();
       var that = this;
       var conf = this.config;
-      http('../src/json/'+title+'.json').then(function(resolve){
-        var data = resolve.data;
-        that.documentObject = data;
-        that.config.originTitle = title;
-      })['catch'](function(e){
-        conf.editCancel = false;
-        conf.detectNotFound = true;
-        conf.detectError = false;
-      })['finally'](function() {
+      if(editMode) {
+        http('../src/json/'+title+'.json').then(function(resolve){
+          var data = resolve.data;
+          that.documentObject = data;
+          that.config.originTitle = title;
+        })['catch'](function(e){
+          conf.editCancel = false;
+          conf.detectNotFound = true;
+          conf.detectError = false;
+        })['finally'](function() {
 
-      });
+        });
+      }
       return {
         documentObject: {
           title: "<unavailable>",

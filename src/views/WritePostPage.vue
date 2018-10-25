@@ -50,7 +50,6 @@
       },
       cancelEdit() {
         this.config.editCancel = true;
-        alert(this.config.originTitle);
       }
     },
     data() {
