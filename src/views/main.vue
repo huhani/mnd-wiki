@@ -5,7 +5,7 @@
     </el-header>
 
     <el-container>
-        <el-aside style="width:200px !important;">
+        <el-aside style="width:200px !important; height: 700px;">
           <recent-posts></recent-posts>
         </el-aside>
         <el-container>
