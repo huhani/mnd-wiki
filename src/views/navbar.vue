@@ -10,7 +10,14 @@
     <el-menu-item index="3"><i class="el-icon-setting"></i>설정</el-menu-item>
     <el-menu-item index="4" disabled>관리자 메뉴</el-menu-item>
 
-    <el-menu-item class="search" index="5" collapse="true"><el-input class="navbarSearch" placeholder="검색" v-model="input"></el-input></el-menu-item>
+    <el-menu-item class="search" index="5" collapse="true">
+      <el-input class="navbarSearch" v-model="input" placeholder="검색">
+      </el-input>
+
+
+
+
+    </el-menu-item>
 
   </el-menu>
 </template>
@@ -42,9 +49,6 @@
   .el-header{
     padding:0;
   }
-  .el-submenu{
-    color:red;
-  }
   #navbar .logo {
     width: 25px;
     height: 25px;
@@ -56,7 +60,7 @@
   }
   #navbar .is-active{
     background-color: #224224;
-    color: antiquewhite;
+    color: #fcf0f7;
   }
   #navbar .search {
     float: right;

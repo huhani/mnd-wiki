@@ -42,5 +42,9 @@
 
 
 <style>
+  .footnote-list{
+    line-height: 2em;
+    display: block;
+  }
 
 </style>
