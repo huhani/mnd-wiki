@@ -4,7 +4,7 @@
       <h1>글작성</h1>
       <div class="buttons">
         <el-button class="add-btn btn" size="mini" type="default" @click="getHtml">등록</el-button>
-        <el-button class="cancel-btn btn" size="mini" type="danger">취소</el-button>
+        <el-button class="cancel-btn btn" size="mini" v-bind:disabled="document.content === unavailableStr" @click="cancelEdit"type="danger">취소</el-button>
       </div>
       <el-input placeholder="Please input" v-model="input"></el-input>
       <div class="clear"></div>
@@ -38,22 +38,48 @@
       'tui-editor': Editor,
       tags: Tags
     },
+    props: {
+      document: Object,
+      originTitle: String,
+      config: Object
+    },
     methods: {
       getHtml() {
         let html = this.$refs.tuiEditor.invoke('getHtml');
+        this.document.content = this.editorHtml;
         alert(html);
+      },
+      cancelEdit() {
+        this.config.editCancel = true;
+        Object.assign(this.document, {
+          title: this.originTitle,
+          content: this.originContent
+        });
       }
     },
     data() {
       return {
-        editorText: 'This is initialValue.',
+        unavailableStr: "<unavailable>",
+        input:this.originTitle || "<undefined>",
+        editorText: this.document.content || "<undefined>",
         editorOptions: {
           hideModeSwitch: true
         },
         editorHtml: '',
-        editorVisible: true
+        editorVisible: true,
+        originContent: null
       };
     },
+    watch: {
+      document: function(documentObject) {
+        let doc = documentObject.content;
+        this.originContent = doc;
+        this.editorText = doc;
+      },
+      originTitle: function(value) {
+        this.input = value;
+      }
+    }
   };
 </script>
 <style>
