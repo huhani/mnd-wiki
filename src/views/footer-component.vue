@@ -53,7 +53,7 @@
     text-align: center;
     font: normal 18px sans-serif;
 
-    padding: 45px;
+    padding: 23px;
   }
 
   .footer-basic-centered .footer-copyright{
@@ -72,7 +72,7 @@
     list-style: none;
     font-weight: bold;
     color:  #ffffff;
-    padding: 35px 0 23px;
+    padding: 18px 0 13px;
     margin: 0;
   }
 
