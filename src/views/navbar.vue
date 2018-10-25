@@ -1,5 +1,5 @@
 <template>
-  <el-menu id="navbar" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+  <el-menu id="navbar" :default-active="activeIndex" active-text-color="#34d400" text-color="#CCC" class="el-menu-demo" mode="horizontal" @select="handleSelect">
     <el-menu-item index="1"><img class="logo" src="../img/logo.png">국방위키(가칭)</el-menu-item>
     <el-submenu index="2">
       <template slot="title"><i class="el-icon-question"></i>도움말</template>

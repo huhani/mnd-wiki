@@ -1,7 +1,7 @@
 <template>
   <div class>
-    <doc-title-section v-bind:asdf="documentObject"></doc-title-section>
-    <doc-content v-on:getData="subscribeData"></doc-content>
+    <doc-title-section v-bind:document="documentObject" v-bind:config="config"></doc-title-section>
+    <doc-content v-on:getData="subscribeData" v-bind:config="config"></doc-content>
   </div>
 </template>
 
@@ -17,7 +17,10 @@
     data: function(){
       return {
         test: 123,
-        documentObject: null
+        documentObject: null,
+        config: {
+          hideTopNavigator: false
+        }
       }
     },
     methods: {
