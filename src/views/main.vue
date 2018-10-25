@@ -6,7 +6,7 @@
 
 
     <el-container id="aside_main__container">
-        <el-aside style="width:250px !important; height: 700px; position: relative; top: 42px;">
+        <el-aside style="width:250px !important; height: 700px; position: relative; top: 20px;">
           <recent-posts></recent-posts>
         </el-aside>
         <el-container id="main__container">
