@@ -4,7 +4,7 @@
     <div is="documentInfoMessage" id="document-info">
       {{documentInfoMessage}}
     </div>
-    <div v-if="!config.hasLoading && !config.detectNotFound" id="showDocument">
+    <div v-if="!config.detectError && !config.hasLoading && !config.detectNotFound" id="showDocument">
       <div id="documentContent">
         <doc-content v-bind:document="document"></doc-content>
       </div>
@@ -77,11 +77,10 @@
           this.$emit('getData', loadingDocument);
           this.document = loadingDocument;
         } else {
-          hideTopNavigator = true;
+          this.config.hideTopNavigator = true;
           this.config.detectError = true;
         }
-        this.config.hideTopNavigator = hideTopNavigator;
-        this.config.originTitle = title;
+        this.config.originTitle = decodeURI(title);
       }
       return {
         documentInfoMessage: null,

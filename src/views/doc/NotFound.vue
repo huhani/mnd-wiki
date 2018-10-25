@@ -2,7 +2,7 @@
   <div id="NotFoundCntent">
     <el-alert title="Not Found" type="info" class="__msgbox_alert" show-icon>
       <div class="__msgbox notfound__msgbox">
-        <span>정보를 찾을 수 없습니다. 지금 바로 <b>{{decodeURIComponent(title)}}</b>에 대한 정보를 등록하여보세요!</span>
+        <span>정보를 찾을 수 없습니다. 지금 바로 <b>{{decodeURIComponent(config.originTitle)}}</b>에 대한 정보를 등록하여보세요!</span>
       </div>
     </el-alert>
     <div id="NotFoundWrite">

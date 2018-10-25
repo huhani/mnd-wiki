@@ -55,7 +55,7 @@
     data() {
       return {
         unavailableStr: "<unavailable>",
-        input:this.config.originTitle || "<undefined>",
+        input: this.config.originTitle && decodeURI(this.config.originTitle) || "<undefined>",
         editorText: this.document.content || "<undefined>",
         editorOptions: {
           hideModeSwitch: true
