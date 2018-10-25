@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!config.hideTopNavigator">
     <H1 class="docTitle">{{title}}</H1>
     <el-button-group class="controlButtons">
       <el-button size="mini" type="primary" icon="el-icon-question">질의응답</el-button>
@@ -23,7 +23,10 @@
         title: "국방위키(가칭):대문"
       };
     },
-    props : ['document'],
+    props : {
+      document: Object,
+      config: Object
+    },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
