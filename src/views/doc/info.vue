@@ -20,6 +20,8 @@
   #documentInfo {
     border: 1px solid #DDD;
     padding:8px;
+    margin: 50px auto 0;
+    max-width: 700px;
   }
 
  #documentInfo .printStr {
