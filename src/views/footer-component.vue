@@ -2,7 +2,7 @@
 
   <footer class="footer-basic-centered" >
 
-    <p class="footer-copyright">ⓒ Copyright 2018 MND-Wiki, All rights reserved.</p>
+    <p class="footer-copyright">Copyright 2018 ⓒ <strong>MND-Wiki</strong>, All rights reserved.</p>
 
     <p class="footer-links">
       <a href="#">개인정보보호방침</a>
