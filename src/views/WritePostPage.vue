@@ -44,6 +44,14 @@
     },
     methods: {
       getHtml() {
+        if(this.originContent === "<unavailable>" || this.originContent === null) {
+          this.document.title = this.input;
+          this.config.originTitle = this.input;
+          this.document.date = '20181026235959';
+          this.config.detectNotFound = false;
+          this.config.detectError = false;
+        }
+
         let html = this.$refs.tuiEditor.invoke('getHtml');
         this.document.content = html;
         this.config.editCancel = true;
