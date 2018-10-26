@@ -45,12 +45,12 @@
     methods: {
       getHtml() {
         let html = this.$refs.tuiEditor.invoke('getHtml');
-        this.document.content = this.editorHtml;
-        alert(html);
+        this.document.content = html;
+        this.config.editCancel = true;
       },
       cancelEdit() {
-        this.config.editCancel = true;
         this.document.content = this.originContent;
+        this.config.editCancel = true;
       }
     },
     data() {
