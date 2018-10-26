@@ -50,6 +50,7 @@
       },
       cancelEdit() {
         this.config.editCancel = true;
+        this.document.content = this.originContent;
       }
     },
     data() {
@@ -62,7 +63,7 @@
         },
         editorHtml: '',
         editorVisible: true,
-        originContent: null
+        originContent: this.document.content || null
       };
     },
     watch: {
