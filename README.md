@@ -1,18 +1,17 @@
-# hello-vue
+# mnd-wiki
+프로젝트 국방위키<br>
+팀 - 휴머니스트
 
-> A Vue.js project
+## ScreenShots
+1. 메인화면
 
-## Build Setup
+![main](https://github.com/huhani/mnd-wiki/blob/master/README/%EC%9D%B4%EB%AF%B8%EC%A7%80%201-%EB%8C%80%EB%AC%B8.png)
 
-``` bash
-# install dependencies
-npm install
+2. 표제어 수정
 
-# serve with hot reload at localhost:8080
-npm run dev
+![](https://github.com/huhani/mnd-wiki/blob/master/README/%EC%9D%B4%EB%AF%B8%EC%A7%80%202-%ED%8E%B8%EC%A7%91%EA%B8%B0%EB%8A%A5.png)
 
-# build for production with minification
-npm run build
-```
+3. 질의 응답
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+![](https://github.com/huhani/mnd-wiki/blob/master/README/%EC%9D%B4%EB%AF%B8%EC%A7%80%206-%EC%A7%88%EC%9D%98%EC%9D%91%EB%8B%B5%20%EB%AA%A9%EC%97%85%20%ED%8E%98%EC%9D%B4%EC%A7%80.png)
+
