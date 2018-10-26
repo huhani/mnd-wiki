@@ -7,7 +7,7 @@
     </H1>
     <el-button-group class="controlButtons">
       <el-button size="mini" type="primary" icon="el-icon-question">질의응답</el-button>
-      <el-button size="mini" type="primary" icon="el-icon-info">역사</el-button>
+      <el-button size="mini" type="primary" icon="el-icon-info" v-on>역사</el-button>
       <el-button size="mini" type="primary" v-bind:disabled="config.isEdit" v-on:click="handleClickWrite" icon="el-icon-edit">편집</el-button>
       <el-button size="mini" type="primary" icon="el-icon-delete" v-on:click="handleClickRemove">삭제</el-button>
     </el-button-group>

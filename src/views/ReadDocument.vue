@@ -59,8 +59,14 @@
         var docMatch = docRegex.exec(path);
         var that = this;
         var hideTopNavigator = false;
-        if(docMatch && docMatch.length > 1) {
-          title = docMatch[1];
+        if(docMatch && docMatch.length > 1 || path === '/') {
+          if(path === '/') {
+            title = '국방위키(가칭)：대문';
+            history.replaceState( {} , '', '/w/'+title );
+          } else {
+            title = docMatch[1];
+          }
+
           this.hasLoading = true;
           http('../src/json/'+title+'.json').then(function(resolve){
             let data = resolve.data;
@@ -72,11 +78,6 @@
           })['finally'](function() {
             that.hasLoading = false;
           });
-        } else if(path === '/') {
-          history.replaceState( {} , '', '/w/국방위키(가칭)：대문' );
-          title = loadingDocument.title;
-          this.$emit('getData', loadingDocument);
-          this.document = loadingDocument;
         } else {
           this.config.hideTopNavigator = true;
           this.config.detectError = true;
