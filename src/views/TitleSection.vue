@@ -6,10 +6,10 @@
       <span v-else-if="document.title === unavailableStr" class="edit-name">::등록</span>
     </H1>
     <el-button-group class="controlButtons">
-      <el-button size="mini" type="primary" icon="el-icon-question">질의응답</el-button>
-      <el-button size="mini" type="primary" icon="el-icon-info" v-on>역사</el-button>
+      <el-button size="mini" type="primary" v-bind:disabled="document.title === unavailableStr" icon="el-icon-question">질의응답</el-button>
+      <el-button size="mini" type="primary" v-bind:disabled="document.title === unavailableStr" icon="el-icon-info" v-on:click="handleClickHistory">역사</el-button>
       <el-button size="mini" type="primary" v-bind:disabled="config.isEdit" v-on:click="handleClickWrite" icon="el-icon-edit">편집</el-button>
-      <el-button size="mini" type="primary" icon="el-icon-delete" v-on:click="handleClickRemove">삭제</el-button>
+      <el-button size="mini" type="primary" v-bind:disabled="document.title === unavailableStr" icon="el-icon-delete" v-on:click="handleClickRemove">삭제</el-button>
     </el-button-group>
     <div class="clear"></div>
   </div>
@@ -38,6 +38,9 @@
       handleClickWrite() {
         console.log(this.config);
         this.config.isEdit = true;
+      },
+      handleClickHistory() {
+        alert("서버 접속에 실패하였습니다.");
       },
       handleClickRemove() {
         alert("서버 접속에 실패하였습니다.");

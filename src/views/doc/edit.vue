@@ -14,6 +14,7 @@
           document: Object
       },
       data() {
+          history.replaceState( {} , '', '/edit/'+this.config.originTitle );
           return {
             unavailableStr: "<unavailable>"
           }

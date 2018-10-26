@@ -62,11 +62,10 @@
         if(docMatch && docMatch.length > 1 || path === '/') {
           if(path === '/') {
             title = '국방위키(가칭)：대문';
-            history.replaceState( {} , '', '/w/'+title );
           } else {
             title = docMatch[1];
           }
-
+          history.replaceState( {} , '', '/w/'+title );
           this.hasLoading = true;
           http('../src/json/'+title+'.json').then(function(resolve){
             let data = resolve.data;
@@ -83,7 +82,9 @@
           this.config.detectError = true;
         }
         this.config.originTitle = decodeURI(title);
+
       }
+      history.replaceState( {} , '', '/w/'+this.config.originTitle );
       return {
         documentInfoMessage: null,
         document: loadingDocument,
