@@ -44,6 +44,12 @@
     date: "20180101235959",
     comment: "TEST",
   };
+
+
+  function loadFunc() {
+
+  }
+
   export default {
     name: "ReadDocument.vue",
     props: {
@@ -93,6 +99,12 @@
     },
     watch: {
       'config.editCancel': function(newVal, oldVal) {
+      },
+      'config.originTitle': function(newVal, oldVal) {
+        if(newVal !== oldVal) {
+          this.document.title = "<unavailable>";
+          console.log(this);
+        }
       }
     },
     components: {

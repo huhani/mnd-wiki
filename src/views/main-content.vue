@@ -50,20 +50,26 @@
 
         });
       }
-      return {
-        documentObject: {
-          title: "<unavailable>",
+      this.config = {
+        isEdit: editMode,
+        hideTopNavigator: false,
+        editCancel: false,
+        detectNotFound: false,
+        detectError: false,
+        originTitle: title
+      };
+      this.documentObject = {
+        title: "<unavailable>",
           content: "<unavailable>",
           comment: "<unavailable>"
-        },
-        config: {
-          isEdit: editMode,
-          hideTopNavigator: false,
-          editCancel: false,
-          detectNotFound: false,
-          detectError: false,
-          originTitle: title
-        }
+      };
+
+      this.$emit('config', this.config);
+      this.$emit('document', this.documentObject);
+
+      return {
+        documentObject: this.documentObject,
+        config: this.config
       }
     },
     methods: {

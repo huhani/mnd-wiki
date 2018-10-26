@@ -7,11 +7,11 @@
 
     <el-container id="aside_main__container">
         <el-aside style="width:250px !important; height: 700px; position: relative; top: 20px;">
-          <recent-posts></recent-posts>
+          <recent-posts v-bind:document="this.document" v-bind:config="this.config"></recent-posts>
         </el-aside>
         <el-container id="main__container">
           <el-main>
-            <main-content></main-content>
+            <main-content v-on:document="getDocument" v-on:config="getConfig"></main-content>
           </el-main>
 
         </el-container>
@@ -31,6 +31,20 @@
   import RecentPosts from './RecentPosts.vue'
     export default {
       name: "main.vue",
+      methods: {
+        getDocument(val) {
+          this.document = val;
+        },
+        getConfig(val) {
+          this.config = val;
+        }
+      },
+      data() {
+        return {
+          config: {},
+          document: {}
+        }
+      },
       components: {
         navbar: navbar,
         mainContent: MainContent,

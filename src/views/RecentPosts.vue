@@ -5,7 +5,7 @@
       <!--<el-button style="float: right; padding: 3px 0" type="text">Operation button</el-button>-->
     </div>
     <div v-for="item in items" class="text item">
-      <a v-bind:href="'/w/' + item.title">{{item.title}}</a>
+      <a v-on:click="itemClick(item.title)">{{item.title}}</a>
     </div>
   </el-card>
 
@@ -28,10 +28,18 @@
             ]
           }
         },
+      props: {
+          document: Object,
+        config: Object
+      },
       methods: {
           test: function() {
               this.$router.replace({ name: "read-document", params: {id:"123"}, query: {q1: "q1"} })
-          }
+          },
+        itemClick: function(title) {
+          this.config.originTitle = title;
+          history.replaceState( {} , '', '/w/'+title );
+        }
       }
     }
 </script>
