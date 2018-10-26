@@ -73,6 +73,7 @@
             that.hasLoading = false;
           });
         } else if(path === '/') {
+          history.replaceState( {} , '', '/w/국방위키(가칭)：대문' );
           title = loadingDocument.title;
           this.$emit('getData', loadingDocument);
           this.document = loadingDocument;

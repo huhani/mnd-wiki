@@ -9,7 +9,7 @@
       <el-button size="mini" type="primary" icon="el-icon-question">질의응답</el-button>
       <el-button size="mini" type="primary" icon="el-icon-info">역사</el-button>
       <el-button size="mini" type="primary" v-bind:disabled="config.isEdit" v-on:click="handleClickWrite" icon="el-icon-edit">편집</el-button>
-      <el-button size="mini" type="primary" icon="el-icon-delete">삭제</el-button>
+      <el-button size="mini" type="primary" icon="el-icon-delete" v-on:click="handleClickRemove">삭제</el-button>
     </el-button-group>
     <div class="clear"></div>
   </div>
@@ -38,6 +38,9 @@
       handleClickWrite() {
         console.log(this.config);
         this.config.isEdit = true;
+      },
+      handleClickRemove() {
+        alert("서버 접속에 실패하였습니다.");
       }
     },
     watch: {
